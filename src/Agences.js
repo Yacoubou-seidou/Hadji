@@ -76,7 +76,7 @@ const Agences = () => {
     );
   });
   const [sonNom, setSonNom] = useState(""); //nom user co
-  const [voirpel, setVoirpel] = useState(false); //niveau admin oir les pelerin par agence
+  const [voirpel, setVoirpel] = useState(false); //niveau admin voir les pelerin par agence
   const [admine] = useState([
     {
       nom: "Yacos",
@@ -117,14 +117,9 @@ const Agences = () => {
   const [image, setImage] = useState(""); //image
   const [lepass, setLepass] = useState(""); //mdp
   const [userIn, setUserIn] = useState([]); //valider user connecter
-  //useEffect/////////////////////////////////////////////////////////
   useEffect(() => {
-    // console.log(agence);
     if (update === true) {
-      // save agence
-      console.log("saved");
       localStorage.setItem("name", JSON.stringify(agence));
-      console.log(update);
       let stat = {
         accepter: 0,
         rejeter: 0,
@@ -192,14 +187,12 @@ const Agences = () => {
     let fileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onload = function () {
-      // console.log(fileReader.result);
       setImage(fileReader.result);
     };
   };
 
   const toggleAddEl = () => {
     //cacher form add agence
-    // setVoirpel(false);
     setAdd(!add);
     setNom("");
     setDescrip("");

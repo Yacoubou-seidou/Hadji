@@ -2,20 +2,11 @@ import React from "react";
 
 const Hadji = ({ haji, agence, setAgence, setUpdate }) => {
   const acceptReject = (id, arr) => {
-    // let array;
-    // const newArry = arr.filter((item) => item.Numero !== id);
-    // const newArry2 = arr.filter((item) => item.Numero === id);
     arr.forEach((item) => {
       if (item.Numero === id) {
         item.Etat = true;
-        // array = [...newArry, item];
-        // console.log(array);
       }
     });
-    // console.log(newArry2);
-    // const newArry = arr.peleri.filter((item) => item.Numero !== id);
-    // const newArr1 = { ...arr, peleri: newArry };
-    // setHaji(newArr1);
     const copy = [...agence];
     const elem = copy.filter((ag) => ag.ID !== haji.ID);
     const elem2 = [...elem, haji];
@@ -23,13 +14,9 @@ const Hadji = ({ haji, agence, setAgence, setUpdate }) => {
     setUpdate(true);
   };
   const rejectpele = (id, arr) => {
-    // let array;
-    // const newArry = arr.filter((item) => item.Numero !== id);
     arr.forEach((item) => {
       if (item.Numero === id) {
         item.Etat = "Rejeter";
-        // array = [...newArry, item];
-        // console.log(array);
       }
     });
 
